@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ungkapan Hatiku Untukmu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Georgia', serif;
+            color: #4a2c2a;
+            background-color: #fff5f5;
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Tampilan Tombol Awal (Amplop) */
+        .box-pembuka {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(227, 137, 137, 0.2);
+            border: 1px solid #f2d6d6;
+            transition: all 0.5s ease;
+        }
+
+        .tombol-buka {
+            background-color: #d14949;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(209, 73, 73, 0.4);
+            transition: transform 0.2s, background 0.2s;
+            margin-top: 20px;
+        }
+
+        .tombol-buka:hover {
+            transform: scale(1.05);
+            background-color: #b33636;
+        }
+
+        /* Konten Surat (Tersembunyi di awal) */
+        .container-surat {
+            max-width: 650px;
+            width: 100%;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(227, 137, 137, 0.25);
+            border: 1px solid #f2d6d6;
+            display: none; /* Sembunyi */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        /* Efek Animasi Muncul */
+        .surat-muncul {
+            display: block !important;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .heart-icon {
+            font-size: 50px;
+            color: #d14949;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #8c2727;
+            margin: 0 0 10px 0;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #a67373;
+            font-size: 14px;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e3a6a6, transparent);
+            margin: 30px 0;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: justify;
+            text-indent: 30px;
+            margin-bottom: 20px;
+            color: #593e3c;
+        }
+
+        .poem-box {
+            background-color: #fffafb;
+            border-left: 4px solid #d14949;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .poem-line {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #733434;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #8c2727;
+            font-weight: bold;
+        }
+
+        .signature {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #a67373;
+            font-style: italic;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BAGIAN 1: TOMBOL PEMBUKA SURAT -->
+    <div id="pembuka" class="box-pembuka">
+        <div class="heart-icon" style="animation: pulse 1s infinite;">✉️</div>
+        <h2 style="color: #8c2727; font-weight: normal; margin: 10px 0;">Ada sebuah pesan untukmu..</h2>
+        <p style="text-indent: 0; text-align: center; color: #a67373;">Pencet dong tombol di bawah buat liat apa yaa kira kira</p>
+        <button class="tombol-buka" onclick="bukaSurat()">Buka Surat Cinta</button>
+    </div>
+
+    <!-- AUDIO NYATA (Menggantikan YouTube yang bermasalah) -->
+    <!-- Menggunakan musik latar romantis instrumen piano yang langsung aktif saat diklik -->
+    <audio id="laguRomantis" src="Surat Cinta untuk Starla.mp3" preload="auto" loop></audio>
+
+    <!-- BAGIAN 2: KONTEN UTAMA SURAT CINTA -->
+    <div id="kontenSurat" class="container-surat">
+        <div class="header">
+            <div class="heart-icon">♥</div>
+            <h1>UNTUK BOCILKU YANG UMUR 6 TAHUN🤍</h1>
+            <div class="subtitle">sebuah pesan yang tertulis dari besarnya cintaku padamu aseekkkkk</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p>
+            ada banyak kejadian di dalem hubungan kita dari senang dan susah dari bahagia sampe sedih bahkan dari makan sampe engga makan dari rasa penasaran sampe rasa sayang dan cinta 
+        </p>
+
+        <p>
+            setiap milidetik setiap detik setiap menit setiap jam setiap hari setiap minggu setiap bulan setiap tahun yang aku jalani bersama dengan kamu mengajarkan aku bahwa cinta itu bukan dari kata kata i love you atau aku sayang kamu tapi cinta itu dari rasa peduli rasa perhatian saling support saling menjaga dan saling menjaga perasaan satu sama lain
+        </p>
+
+        <div class="poem-box">
+            <div class="poem-line">"ku ingat kenangan tentang caraku menemukan dirimu,"</div>
+            <div class="poem-line">"tentang apa yang membuatku mudah berikan hatiku padamu."</div>
+            <div class="poem-line">"janganlah engkau meninggalkan diriku,"</div>
+            <div class="poem-line">"karena tlah kuhabiskan sisa cintaku hanya untukmu."</div>
+        </div>
+
+        <p>
+            terimaakaasiii sudaa mauu jadii pasanganku dan menerima semua baik burukku yang bahkan keburukan aku banyak orang yang tidaa akan tahan, setiap saat aku bersama kamu aku sangat bersyukur bisa bertemu dengan kamu yang selalu ada dan siap membantu aku kapanpun 
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            i loooooooveeeee yoooouuuuu moooorreeeee moooorreeeee moooorreeeee and moooorreeeee 
+            <div class="signature">maaf aku bikinnya tengah malem biar kamu engga tau hehe</div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK INTERAKSI -->
+    <script>
+        function bukaSurat() {
+            // Sembunyikan kotak tombol pembuka
+            document.getElementById('pembuka').style.display = 'none';
+            
+            // Munculkan konten surat
+            var surat = document.getElementById('kontenSurat');
+            surat.classList.add('surat-muncul');
+            
+            // Putar audio HTML5 asli (Akan langsung lolos dari blokir Autoplay karena dipicu oleh klik user)
+            var musik = document.getElementById('laguRomantis');
+            musik.volume = 0.5; // Mengatur volume 50% supaya pas di telinga
+            musik.play().catch(function(error) {
+                console.log("Pemutaran gagal:", error);
+            });
+        }
+    </script>
+
+</body>
+</html>
